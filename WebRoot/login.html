@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登陆</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    
+    <style>
+      #grad {
+        background: -webkit-linear-gradient(left, red, blue);
+        background: -o-linear-gradient(left, red, blue);
+        background: -moz-linear-gradient(right, red, blue);
+        background: linear-gradient(to right, red, blue); 
+      }
+    </style>
+</head>
+<body>
+  <!-- 登陆头部-->
+	<div class="container-fluid"  style="background-color:#BBFFEE">
+     <h2>新闻发布系统</h2>    
+  </div> 
+  <!-- /头部 -->
+  <hr/>
+  <!-- body-->
+  <div class="container row" >
+    <!-- advertisement-->
+    <div class="col-md-7 text-center">
+      <img src="./image/login.png" width="100%" alt="A Advertisement" class="img-thumbnail">
+    </div>
+    <!-- login form-->
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">登陆</div>
+        <div class="panel-body">
+          <form class="form-horizontal" action="login.action" method="post">
+            <!-- idInput-->
+            <div class="form-group">
+              <label for="username" class="col-sm-3 control-label">用户名</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="text" id="username" name="username" placeholder="请输入你的用户名" required>
+              </div>
+            </div>
+            <!-- passwordInput-->
+            <div class="form-group">
+              <label for="password" class="col-sm-3 control-label">密码</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="password" id="password" name="password" placeholder="请输入你的密码" required>
+              </div>
+            </div>
+            <!-- 验证码-->
+            <div class="form-group">
+               <label for="verification" class="col-sm-3 control-label">验证码</label>
+               <div class="col-sm-5">
+                <input class="form-control" type="text" id="verification" name="verification" maxlength="4" placeholder="请输入验证码" required>
+              </div>
+              <div class="col-sm-4">
+              	<input class="form-control" type="text" id="verificationCode" disabled="disabled" value="1234"/>
+              </div>
+            </div>
+            <!-- submit-->
+            <button class="btn-lg btn-primary btn-block" type="submit">登陆</button>
+            
+            <div class="form-group"><a href=""><p class="text-center help-block">意见反馈</p></a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- /body-->
+
+  <hr/>
+  <!-- footer-->
+  <div class="container-fluid">
+    <p class="text-center help-block">All Right Reserved</p>
+  </div>
+	<!-- /footer-->
+</body>
+</html>

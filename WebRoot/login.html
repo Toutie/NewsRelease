@@ -5,10 +5,10 @@
 	<title>登陆</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- 引入 Bootstrap -->
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
-    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/ajax.js"></script>
     <style>
       #grad {
         background: -webkit-linear-gradient(left, red, blue);
@@ -36,7 +36,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">登陆</div>
         <div class="panel-body">
-          <form class="form-horizontal" action="login.action" method="post">
+          <form class="form-horizontal" id="loginForm" onsubmit="return false">
             <!-- idInput-->
             <div class="form-group">
               <label for="username" class="col-sm-3 control-label">用户名</label>
@@ -58,11 +58,11 @@
                 <input class="form-control" type="text" id="verification" name="verification" maxlength="4" placeholder="请输入验证码" required>
               </div>
               <div class="col-sm-4">
-              	<input class="form-control" type="text" id="verificationCode" disabled="disabled" value="1234"/>
+              	<input class="form-control" type="text" id="verificationCode" disabled="disabled" value="wait"/>
               </div>
             </div>
             <!-- submit-->
-            <button class="btn-lg btn-primary btn-block" type="submit">登陆</button>
+            <button class="btn-lg btn-primary btn-block" onclick="login()">登陆</button>
             
             <div class="form-group"><a href=""><p class="text-center help-block">意见反馈</p></a></div>
           </form>
@@ -78,5 +78,10 @@
     <p class="text-center help-block">All Right Reserved</p>
   </div>
 	<!-- /footer-->
+	
+	<!-- 得到验证码 -->
+	<script>
+		getVerifyCode();
+	</script>
 </body>
 </html>

@@ -12,9 +12,8 @@ public class LoginVerify {
 		}
 	}
 	
-	public static boolean formVerify(User user){
-		String username = user.getUsername();
-		String password = user.getPassword();
+	public static boolean formVerify(String username,String password){
+
 		
 		if(username!=null&&!username.trim().equals("")&&password!=null&&!password.trim().equals("")){
 			return true;

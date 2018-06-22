@@ -14,9 +14,7 @@ import com.dao.UserDaoImpl;
 import com.verify.LoginVerify;
 
 public class LoginServlet extends HttpServlet {
-	//实例化
-	User user = new User();
-	UserDaoImpl userDao = new UserDaoImpl();
+	
 	
 	
 	/**
@@ -61,31 +59,47 @@ public class LoginServlet extends HttpServlet {
 		 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		System.out.println("It's LoginServlet!");
+		
+		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		
-		//验证验证码
-		if(!LoginVerify.codeVerify(request.getParameter("verification"),(String)session.getAttribute("verification"))){
-			//返回提示，验证码错误，ajax
-		}
-		
 		//获取参数
-		user.setUsername(request.getParameter("username"));
-		user.setPassword(request.getParameter("password"));
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String verification = request.getParameter("verification");
+		System.out.println(username+"/"+password+"/"+verification);
 		
-		//验证用户名和密码格式
-		if(!LoginVerify.formVerify(user)){
-			//返回提示，格式错误，建议用ajax
-		}
+		int correctCode = (Integer) session.getAttribute("verification");
 		
-		//验证账号密码是否错误
-		user = userDao.isValid(user.getUsername(), user.getPassword());
-		if(user==null){
-			//账号或密码错误
+		//验证验证码
+		if(!LoginVerify.codeVerify(verification,Integer.toString(correctCode))){
+			//返回提示，验证码错误，ajax
+			out.print("login002");	//验证码错误
 		}else{
-			//登陆成功
-			session.setAttribute("user", user);
+			
+			//验证用户名和密码格式
+			if(!LoginVerify.formVerify(username,password)){
+				//返回提示，格式错误，建议用ajax
+				out.print("login003");
+			}
+			
+			//实例化
+			User user = new User();
+			UserDaoImpl userDao = new UserDaoImpl();
+			
+			//验证账号密码是否错误
+			user = userDao.isValid(username, password);
+			if(user==null){
+				//账号或密码错误
+				out.print("login001");
+			}else{
+				//登陆成功
+				session.setAttribute("user", user);
+				out.print("login000");
+			}
 		}
 	}
 

@@ -17,6 +17,9 @@ function getXHR(){
 }
 
 function getVerifyCode(){
+	var verificationCode = document.getElementById("verificationCode");
+	verificationCode.value = "wait";
+	
 	var xhr = getXHR();
 	
 	xhr.open("POST","servlet/VerifyCodeServlet");
@@ -27,7 +30,6 @@ function getVerifyCode(){
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var rt = xhr.responseText;
 			console.log(rt);
-			var verificationCode = document.getElementById("verificationCode");
 			verificationCode.value = rt;
 		}
 	}
@@ -37,11 +39,11 @@ function login(){
 	var xhr = getXHR();
 
 	var f = document.getElementById("loginForm");	//得到登陆表单
-	var userName = f.username.value;
+	var username = f.username.value;
 	var password = f.password.value;
 	var verification = f.verification.value;
 	
-	var param = "username="+userName+"&"+"password="+password+"&"+"verification="+verification;
+	var param = "username="+username+"&"+"password="+password+"&"+"verification="+verification;
 
 	console.log("param:"+param);
 	
@@ -62,10 +64,42 @@ function login(){
 				alert("验证码错误");
 			}else if (rt == "login003") {	//格式错误
 				alert("错误，请检查输入是否为空");
-			}
-			
+			}		
 			//重新得到验证码
 			getVerifyCode();
+			return false;
+		}
+	}
+}
+
+function newsRelease(){
+	var xhr = getXHR();
+
+	var f = document.getElementById("newsReleaseForm");	//得到表单
+	
+	var title = f.title.value;
+	var type = f.type.value;
+	var content = f.content.value;
+	
+	var param = "title="+title+"&"+"type="+type+"&"+"content="+content;
+
+	console.log("param:"+param);
+	
+	xhr.open("POST","servlet/NewsReleaseServlet");
+	xhr.setRequestHeader("CONTENT-TYPE","application/x-www-form-urlencoded");
+	xhr.send(param);
+	
+	xhr.onreadystatechange = function(){
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			var rt = xhr.responseText;
+			console.log(rt);
+			
+			if (rt == "release000") {	//发布成功
+				alert("发布成功");
+				location.href = "console/newsRelease.jsp";
+			}else if (rt == "release001") {	//发布失败
+				alert("发布失败，请重试！");
+			}
 		}
 	}
 }

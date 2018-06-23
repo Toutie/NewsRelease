@@ -23,8 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<jsp:include page="/console/common/js.jsp" />
   </head>
   
-  <body
-  
+  <body>
 	<jsp:include page="/console/common/console-header.jsp" />
     <!-- 内容 -->
 	<div id="page-wrapper">

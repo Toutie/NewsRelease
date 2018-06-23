@@ -22,12 +22,12 @@
                   <li>
                       <a href="#">
                           <div>
-                              <strong>张三</strong>
+                              <strong>管理员</strong>
                               <span class="pull-right text-muted">
                                   <em>今天</em>
                               </span>
                           </div>
-                          <div>你好,欢迎使用本系统，这是测试消息</div>
+                          <div>你好,欢迎使用本系统，这是测试消息!</div>
                       </a>
                   </li>
                   <li class="divider"></li>
@@ -42,7 +42,9 @@
         <!-- /.dropdown-messages -->
     	<li class="dropdown">
                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                   <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                   <i class="fa fa-user fa-fw"></i> 
+                   <span id="user_name">${user.name}</span>
+                   <i class="fa fa-caret-down"> </i>
                </a>
                <ul class="dropdown-menu dropdown-user">
                    <li><a href="#"><i class="fa fa-user fa-fw"></i>个人信息</a>
@@ -72,7 +74,7 @@
                        <a href="#"><i class="fa fa-dashboard"></i>新闻<span class="fa arrow"></span></a>
                        <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">发布新闻</a>
+                                <a href="console/newsRelease.jsp">发布新闻</a>
                             </li>
                            	<li>
                                 <a href="#">新闻审批</a>

@@ -17,20 +17,18 @@ function getXHR(){
 }
 
 function getVerifyCode(){
-	var verificationCode = document.getElementById("verificationCode");
-	verificationCode.value = "wait";
+	var codeImage = document.getElementById("codeImage");
 	
 	var xhr = getXHR();
 	
 	xhr.open("POST","servlet/VerifyCodeServlet");
 	xhr.setRequestHeader("CONTENT-TYPE","application/x-www-form-urlencoded");
-	xhr.send();
+	xhr.send(null);
 	
 	xhr.onreadystatechange = function(){
 		if (xhr.readyState == 4 && xhr.status == 200) {
-			var rt = xhr.responseText;
-			console.log(rt);
-			verificationCode.value = rt;
+			codeImage.src = "servlet/VerifyCodeServlet?time="+
+				new Date().getTime();
 		}
 	}
 }

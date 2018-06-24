@@ -21,12 +21,13 @@
 <body>
   <!-- 登陆头部-->
 	<div class="container-fluid"  style="background-color:#BBFFEE">
-     <h2>新闻发布系统</h2>    
+     <h1>新闻发布系统</h1>   
   </div> 
   <!-- /头部 -->
-  <hr/>
+  
+  
   <!-- body-->
-  <div class="container row" >
+  <div class="container row">
     <!-- advertisement-->
     <div class="col-md-7 text-center">
       <img src="./image/login.png" width="100%" alt="A Advertisement" class="img-thumbnail">
@@ -55,10 +56,10 @@
             <div class="form-group">
                <label for="verification" class="col-sm-3 control-label">验证码</label>
                <div class="col-sm-5">
-                <input class="form-control" type="text" id="verification" name="verification" maxlength="4" placeholder="请输入验证码" required>
+                <input class="form-control" type="text" id="verification" name="verification" maxlength="5" placeholder="请输入验证码" required>
               </div>
               <div class="col-sm-4">
-              	<input class="form-control" type="text" id="verificationCode" disabled="disabled" value="wait"/>
+              	<img  src="servlet/VerifyCodeServlet" id="codeImage" border=""  height="30px" width="70px" onClick="getVerifyCode()"/>
               </div>
             </div>
             <!-- submit-->
@@ -77,11 +78,7 @@
   <div class="container-fluid">
     <p class="text-center help-block">All Right Reserved</p>
   </div>
-	<!-- /footer-->
+	<!-- /footer-->  
 	
-	<!-- 得到验证码 -->
-	<script>
-		getVerifyCode();
-	</script>
 </body>
 </html>

@@ -72,10 +72,10 @@ public class LoginServlet extends HttpServlet {
 		String verification = request.getParameter("verification");
 		System.out.println(username+"/"+password+"/"+verification);
 		
-		int correctCode = (Integer) session.getAttribute("verification");
+		String correctCode = (String)session.getAttribute("verification");
 		
 		//验证验证码
-		if(!LoginVerify.codeVerify(verification,Integer.toString(correctCode))){
+		if(!LoginVerify.codeVerify(verification,correctCode)){
 			//返回提示，验证码错误，ajax
 			out.print("login002");	//验证码错误
 		}else{
@@ -98,6 +98,7 @@ public class LoginServlet extends HttpServlet {
 			}else{
 				//登陆成功
 				session.setAttribute("user", user);
+				session.setMaxInactiveInterval(1800);
 				out.print("login000");
 			}
 		}

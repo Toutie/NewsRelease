@@ -2,27 +2,21 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.bean.News;
-import com.bean.User;
 import com.dao.NewsDaoImpl;
 
-import StringUtil.StringUtil;
-
-public class NewsReleaseServlet extends HttpServlet {
+public class NewsServlet extends HttpServlet {
 
 	/**
 		 * Constructor of the object.
 		 */
-	public NewsReleaseServlet() {
+	public NewsServlet() {
 		super();
 	}
 
@@ -61,34 +55,28 @@ public class NewsReleaseServlet extends HttpServlet {
 		 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("It's NewsReleaseServlet");
-		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession();
 		
-		News news = new News();
-		//组织news
-		news.setTitle(StringUtil.transfer(request.getParameter("title")));
-		news.setType(request.getParameter("type"));
-		news.setContent(StringUtil.transfer(request.getParameter("content")));
-		news.setUsername(((User)session.getAttribute("user")).getUsername());		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		news.setTime(sdf.format(new Date()));
+		//实例化
+		NewsDaoImpl newsDao = new NewsDaoImpl();
 		
-		System.out.println(news.getContent());
+		String newsid = request.getParameter("newsid");
 		
 		/*
-		 * 这里需要检验数据有效性
-		 * NewsVerify.releaseVerify()
+		 * 在这里验证newsid的有效性
+		 * if(有效)
+		 * 	才继续往下面做
+		 * else
+		 * 	返回错误
 		 */
 		
-		//通过验证则插入数据库
-		NewsDaoImpl newsDao = new NewsDaoImpl();
-		if(newsDao.releaseNews(news)){	//发布成功
-			out.print("release000");
-		}else{	//发布失败
-			out.print("release001");
+		News news = newsDao.queryNews(newsid);
+		
+		if(news!=null){
+			out.print(news.getContent());
+		}else{
+			out.print("该条新闻不存在!");
 		}
 		
 	}

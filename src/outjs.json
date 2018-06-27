@@ -1,0 +1,4 @@
+{
+	"unlogin":"<script>alert('请登录后再操作!');</script>",
+	"tologin":"<script>location.href='/NewsRelease/login.html';</script>"
+}

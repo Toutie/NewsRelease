@@ -57,4 +57,61 @@ public class NewsDaoImpl extends BaseDAOImpl{
 		
 		return news;
 	}
+	
+	//根据 类型type 查询 第curPage页 的 pageSize 条新闻
+	public List<News> queryNewsByType(String type,int curPage,int pageSize){
+		String sql = "select * from news where type='"+ type + "'";
+		System.out.println(sql);
+		List resultList = this.queryPage(sql, curPage, pageSize);
+		List<News> newsList = new ArrayList<News>();
+		for(int i=0;i<resultList.size();i++){
+			List<String> tempList = (List<String>) resultList.get(i);
+			
+			if(tempList.size()>0){
+				News news = new News();
+				news.setNewsid(tempList.get(0));
+				news.setType(tempList.get(1));
+				news.setTitle(tempList.get(2));
+				news.setUsername(tempList.get(3));
+				news.setContent(tempList.get(4));
+				news.setTime(tempList.get(5));
+				news.setClick(tempList.get(6));
+				
+				newsList.add(news);
+			}
+			
+		}
+		
+		return newsList;
+	}
+
+	public boolean updateClick(String newsid) {
+		// TODO Auto-generated method stub
+		String sql = "update news set click=click+1 where newsid='" + newsid + "'";
+		return super.update(sql);
+	}
+
+	public List<News> queryNewsByType(String type) {
+		// TODO Auto-generated method stub
+		String sql = "select * from news where type='" + type + "'";
+		List resultList = super.query(sql);
+		List<News> newsList = new ArrayList<News>();
+		for(int i=0; i<resultList.size(); i++){
+			List<String> tempList = (List<String>) resultList.get(i);
+			
+			if(tempList.size()>0){
+				News news = new News();
+				news.setNewsid(tempList.get(0));
+				news.setType(tempList.get(1));
+				news.setTitle(tempList.get(2));
+				news.setUsername(tempList.get(3));
+				news.setContent(tempList.get(4));
+				news.setTime(tempList.get(5));
+				news.setClick(tempList.get(6));
+				
+				newsList.add(news);
+			}
+		}
+		return newsList;
+	}
 }

@@ -23,7 +23,7 @@ public class VerifyCodeServlet extends HttpServlet {
 	//验证图片的高度
 	private final int height = 30;
 	//验证码字符的个数
-	private final int codeCount = 5;
+	private final int codeCount = 4;
 	//字体高度
 	private int fontHeight;
 	
@@ -144,8 +144,8 @@ public class VerifyCodeServlet extends HttpServlet {
 	   // 将四位数字的验证码保存到Session中
 	  session.setAttribute("verification", randomCode.toString());
 	  System.out.println("verification:"+randomCode.toString());
-	  //验证码有效时间30s
-	  session.setMaxInactiveInterval(30);
+	  //验证码有效时间120s
+	  session.setMaxInactiveInterval(120);
 	   
 	}
 
@@ -156,7 +156,7 @@ public class VerifyCodeServlet extends HttpServlet {
 		 */
 	public void init() throws ServletException {
 		//生成随机数的水平距离
-		xx = width/(codeCount+1);
+		xx = width/codeCount;
 		//生成随机数的数字高度
 		fontHeight = height - 2;
 		//生成随机数的垂直距离

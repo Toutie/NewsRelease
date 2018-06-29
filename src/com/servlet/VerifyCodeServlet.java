@@ -156,7 +156,7 @@ public class VerifyCodeServlet extends HttpServlet {
 		 */
 	public void init() throws ServletException {
 		//生成随机数的水平距离
-		xx = width/codeCount;
+		xx = width/(codeCount+3);
 		//生成随机数的数字高度
 		fontHeight = height - 2;
 		//生成随机数的垂直距离

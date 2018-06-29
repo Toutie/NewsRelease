@@ -144,8 +144,8 @@ public class VerifyCodeServlet extends HttpServlet {
 	   // 将四位数字的验证码保存到Session中
 	  session.setAttribute("verification", randomCode.toString());
 	  System.out.println("verification:"+randomCode.toString());
-	  //验证码有效时间30s
-	  session.setMaxInactiveInterval(30);
+	  //验证码有效时间120s
+	  session.setMaxInactiveInterval(120);
 	   
 	}
 

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 <!-- FontAwesome Styles-->

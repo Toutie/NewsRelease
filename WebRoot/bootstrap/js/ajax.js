@@ -102,6 +102,39 @@ function newsRelease(){
 	}
 }
 
+function noticeRelease(){
+	var xhr = getXHR();
+
+	var f = document.getElementById("noticeReleaseForm");	//得到表单
+	
+	var title = f.title.value;
+	var receiver = f.receiver.value;
+	var content = f.content.value;
+	
+	var param = "title="+title+"&"+"receiver="+receiver+"&"+"content="+content;
+
+	console.log("param:"+param);
+	
+	xhr.open("POST","servlet/NoticeReleaseServlet");
+	xhr.setRequestHeader("CONTENT-TYPE","application/x-www-form-urlencoded");
+	xhr.send(param);
+	
+	xhr.onreadystatechange = function(){
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			var rt = xhr.responseText;
+			console.log(rt);
+			
+			if (rt == "release000") {	//发布成功
+				alert("发布成功");
+				location.href = "console/noticeRelease.jsp";
+			}else if (rt == "release001") {	//发布失败
+				alert("发布失败，请重试！");
+			}
+		}
+	}
+}
+
+
 function test(){
 	alert("测试");
 }

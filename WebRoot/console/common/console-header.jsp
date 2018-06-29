@@ -71,13 +71,13 @@
                	   </li>
 				   <!-- 新闻 -->
                    <li>
-                       <a href="#"><i class="fa fa-dashboard"></i>新闻<span class="fa arrow"></span></a>
+                       <a href="#"><i class="fa fa-dashboard"></i>管理中心<span class="fa arrow"></span></a>
                        <ul class="nav nav-second-level">
                             <li>
                                 <a href="console/newsRelease.jsp">发布新闻</a>
                             </li>
                            	<li>
-                                <a href="#">新闻审批</a>
+                                <a href="console/noticeRelease.jsp">发布通知</a>
                             </li>
                         </ul>
                    </li>
@@ -87,7 +87,7 @@
                         <a href="#"><i class="fa fa-qrcode"></i>个人中心<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">我的通知</a>
+                                <a href="servlet/MyNoticeServlet">我的通知</a>
                             </li>
                            	<li>
                                 <a href="#">我的留言</a>

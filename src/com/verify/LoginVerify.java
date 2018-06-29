@@ -5,7 +5,7 @@ import com.bean.User;
 public class LoginVerify {
 
 	public static boolean codeVerify(String receive,String correct){
-		if(receive.equals(correct)){
+		if(receive.toLowerCase().equals(correct.toLowerCase())){
 			return true;
 		}else{
 			return false;

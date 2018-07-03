@@ -75,4 +75,20 @@ public class UserDaoImpl extends BaseDAOImpl{
 		
 		return list;
 	}
+	
+	public boolean updateNewsAuthority(String username,String isNews){
+		String sql = "update user set isNews='"+isNews+"' where username='"+
+				username+"';";
+		System.out.println("sql:"+sql);
+		
+		return super.update(sql);
+	}
+	
+	public boolean updateNoticeAuthority(String username,String isNotice){
+		String sql = "update user set isNotice='"+isNotice+"' where username='"+
+				username+"';";
+		System.out.println("sql:"+sql);
+		
+		return super.update(sql);
+	}
 }

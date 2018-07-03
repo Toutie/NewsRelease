@@ -57,13 +57,6 @@
   </servlet>
 
 
-
-
-
-
-
-
-
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/servlet/LoginServlet</url-pattern>

@@ -9,14 +9,14 @@
   </head>
   
   <body>
-    <div class="container">
+    <div class="" style="background-color:#3300ff">
     	<div class="logo" id="logo">
-    		<image src="/NewsPublishSystem/image/logo2.jpg"/>
+    		<image src="/NewsRelease/image/logo2.jpg"/>
     	</div>
      </div>	
-    <div class="container" id="menu" >
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">首页</a></li>
+    <div class="container" id="menu">
+    	<ul class="nav navbar-nav" >
+    		<li><a href="/NewsRelease/front/home.jsp">首页</a></li>
     	</ul>
     	<ul class="nav navbar-nav">
     		<li><a href="#">学院概况</a></li>

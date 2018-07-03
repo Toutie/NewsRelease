@@ -26,6 +26,7 @@ public class StringUtil {
 		return jsonObject.getString(key);
 	}
 	
+	//将类型转换为中文用户能看懂的表现形式
 	public static String typeToChineseStr(String type){
 		String resultStr = null;
 		switch(type){

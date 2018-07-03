@@ -60,7 +60,7 @@ public class NewsDaoImpl extends BaseDAOImpl{
 	
 	//根据 类型type 查询 第curPage页 的 pageSize 条新闻
 	public List<News> queryNewsByType(String type,int curPage,int pageSize){
-		String sql = "select * from news where type='"+ type + "'";
+		String sql = "select * from news where type='"+ type + "' order by time desc";
 		System.out.println(sql);
 		List resultList = this.queryPage(sql, curPage, pageSize);
 		List<News> newsList = new ArrayList<News>();
@@ -84,13 +84,14 @@ public class NewsDaoImpl extends BaseDAOImpl{
 		
 		return newsList;
 	}
-
+	
+	//用户点击新闻链接后更新点击量
 	public boolean updateClick(String newsid) {
 		// TODO Auto-generated method stub
 		String sql = "update news set click=click+1 where newsid='" + newsid + "'";
 		return super.update(sql);
 	}
-
+	
 	public List<News> queryNewsByType(String type) {
 		// TODO Auto-generated method stub
 		String sql = "select * from news where type='" + type + "'";
@@ -113,5 +114,13 @@ public class NewsDaoImpl extends BaseDAOImpl{
 			}
 		}
 		return newsList;
+	}
+	
+	//获取该类型新闻的总页数
+	public int getNewsPage(String type,int pageSize){
+		String sql = "select * from news where type='" + type +"'";
+		System.out.println("sql:" + sql);
+		
+		return super.getPageCount(sql, pageSize);
 	}
 }

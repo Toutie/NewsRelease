@@ -46,16 +46,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<hr/>
      			<!-- 我的通知 -->
         		<div id="myNotice" class="text-center">
-        			<table class="table table-hover table-bordered">
+        			<table class="table table-bordered table-striped">
         				<!-- 表头  -->
-        				<tr>
+        				<tr class="active">
         					<th>标题</th>
         					<th>发送者</th>
         					<th>接收者</th>
         					<th>时间</th>
         				</tr>
         				<c:forEach items="${notices}" var="list">
-        					<tr>
+        					<tr >
         						<td>
         							<a href="/NewsRelease/servlet/NoticeDetailServlet?noticeid=${list.noticeid}">
         								<c:out value="${list.title}"/>

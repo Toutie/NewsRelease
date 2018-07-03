@@ -49,6 +49,13 @@
     <servlet-name>NoticeDetailServlet</servlet-name>
     <servlet-class>com.servlet.NoticeDetailServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>SearchUserServlet</description>
+    <display-name>SearchUserServlet</display-name>
+    <servlet-name>SearchUserServlet</servlet-name>
+    <servlet-class>com.servlet.SearchUserServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -88,6 +95,10 @@
   <servlet-mapping>
     <servlet-name>NoticeDetailServlet</servlet-name>
     <url-pattern>/servlet/NoticeDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchUserServlet</servlet-name>
+    <url-pattern>/servlet/SearchUserServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

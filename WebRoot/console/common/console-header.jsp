@@ -32,7 +32,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                      <a class="text-center" href="#">
+                      <a class="text-center" href="/NewsRelease/servlet/MyNoticeServlet">
                           <strong>Read All Messages</strong>
                           <i class="fa fa-angle-right"></i>
                       </a>
@@ -52,7 +52,10 @@
                    <li><a href="#"><i class="fa fa-gear fa-fw"></i>设置</a>
                    </li>
                    <li class="divider"></li>
-                   <li><a href="/NewsRelease/servlet/LogoutServlet"><i class="fa fa-sign-out fa-fw"></i>登出</a>
+                   <li>
+                   	<a href="/NewsRelease/servlet/LogoutServlet">
+                   		<i class="fa fa-sign-out fa-fw"></i>登出
+                  	</a>
                    </li>
                </ul>
                <!-- /.dropdown-user -->
@@ -78,6 +81,9 @@
                             </li>
                            	<li>
                                 <a href="console/noticeRelease.jsp">发布通知</a>
+                            </li>
+                            <li>
+                            	<a href="console/authorityManage.jsp">权限管理</a>
                             </li>
                         </ul>
                    </li>

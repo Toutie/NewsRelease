@@ -32,6 +32,18 @@
     <servlet-class>com.servlet.NewsServlet</servlet-class>
   </servlet>
   <servlet>
+    <description>NewsDetailServlet</description>
+    <display-name>NewsDetailServlet</display-name>
+    <servlet-name>NewsDetailServlet</servlet-name>
+    <servlet-class>com.servlet.NewsDetailServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <description>NewsListServlet</description>
+    <display-name>NewsListServlet</display-name>
+    <servlet-name>NewsListServlet</servlet-name>
+    <servlet-class>com.servlet.NewsListServlet</servlet-class>
+  </servlet>
+  <servlet>
     <description>NoticeReleaseServlet</description>
     <display-name>NoticeReleaseServlet</display-name>
     <servlet-name>NoticeReleaseServlet</servlet-name>
@@ -49,13 +61,13 @@
     <servlet-name>NoticeDetailServlet</servlet-name>
     <servlet-class>com.servlet.NoticeDetailServlet</servlet-class>
   </servlet>
+
   <servlet>
     <description>SearchUserServlet</description>
     <display-name>SearchUserServlet</display-name>
     <servlet-name>SearchUserServlet</servlet-name>
     <servlet-class>com.servlet.SearchUserServlet</servlet-class>
   </servlet>
-
 
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -78,6 +90,14 @@
     <url-pattern>/servlet/NewsServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>NewsDetailServlet</servlet-name>
+    <url-pattern>/servlet/NewsDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsListServlet</servlet-name>
+    <url-pattern>/servlet/NewsListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>NoticeReleaseServlet</servlet-name>
     <url-pattern>/servlet/NoticeReleaseServlet</url-pattern>
   </servlet-mapping>
@@ -89,11 +109,14 @@
     <servlet-name>NoticeDetailServlet</servlet-name>
     <url-pattern>/servlet/NoticeDetailServlet</url-pattern>
   </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>SearchUserServlet</servlet-name>
     <url-pattern>/servlet/SearchUserServlet</url-pattern>
-  </servlet-mapping>
+
   <welcome-file-list>
+  </servlet-mapping>
+
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -101,16 +124,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- 配置过滤器 -->
   <filter>
-  	<filter-name>LoginFilter</filter-name>
-  	<filter-class>com.filter.LoginFilter</filter-class>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.filter.LoginFilter</filter-class>
   </filter>
-  
-  <!-- 映射过滤器 -->
   <filter-mapping>
-  	<filter-name>LoginFilter</filter-name>
-  	<url-pattern>/console/*</url-pattern>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/console/*</url-pattern>
   </filter-mapping>
 </web-app>

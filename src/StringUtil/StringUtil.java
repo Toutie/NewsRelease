@@ -25,4 +25,16 @@ public class StringUtil {
 		
 		return jsonObject.getString(key);
 	}
+	
+	//将类型转换为中文用户能看懂的表现形式
+	public static String typeToChineseStr(String type){
+		String resultStr = null;
+		switch(type){
+			case "t001":resultStr = "学院动态"; break;
+			case "t002":resultStr = "学术新闻"; break;
+			case "t003":resultStr = "学风建设"; break;
+			default:System.out.println("type取值有问题！");break;
+		}
+		return resultStr;
+	}
 }

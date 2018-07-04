@@ -113,9 +113,9 @@
   <servlet-mapping>
     <servlet-name>SearchUserServlet</servlet-name>
     <url-pattern>/servlet/SearchUserServlet</url-pattern>
-
-  <welcome-file-list>
   </servlet-mapping>
+ 
+ <welcome-file-list>
 
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -123,7 +123,7 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+   </welcome-file-list>
   <filter>
     <filter-name>LoginFilter</filter-name>
     <filter-class>com.filter.LoginFilter</filter-class>

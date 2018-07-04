@@ -18,7 +18,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
-	
+	<style type="text/css">
+	body {
+	font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	color:#2d3536;
+	background:#e8e0c0 url(../nivo-slider/images/background.png) repeat;
+    text-shadow:0 1px 0 #fff;
+	}
+	</style>
   </head>
   
    <body class="home-page">
@@ -27,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	</div>
   
 	<!-- 内容 -->
-		<div id="page-wrapper">
+		<div id="page-wrapper" >
     		<div id="page-inner">
     			<div>
     				<ol class="breadcrumb">
@@ -37,8 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</div>
     			<hr/>
      			<!-- 我的通知 -->
-        		<div id="myNotice" class="text-center">
-        			<table class="table table-hover table-bordered">
+        		<div id="newsList" class="text-center container" >
+        			<table class="table table-hover table-bordered" style="background-color:white">
         				<!-- 表头  -->
         				<tr>
         					<th>标题</th>

@@ -27,8 +27,8 @@ public class ModuleTag extends SimpleTagSupport {
 	
 	public void doTag() throws JspException, IOException{
 		JspWriter out = getJspContext().getOut();
-		//ÓÃtype²éÊı¾İ¿â,outÊä³ö
-	  	//¸ù¾İtype²éÊı¾İ
+		//é¢â•°ypeéŒãƒ¦æšŸé¹î†¼ç°±,outæˆæ’³åš­
+	  	//éè§„åµtypeéŒãƒ¦æšŸé¹ï¿½
 		//list = dao.queryPage();
 		
 		NewsDaoImpl nd = new NewsDaoImpl();
@@ -41,20 +41,22 @@ public class ModuleTag extends SimpleTagSupport {
 	  	out.print("</div>");
 	  	out.print("<div class='panel-body'>");
 	  	
-	  	//µÚ1ÁĞ
-	  	out.print("<div class='col-md-6'>");
-		out.print("<dl class='dl-horizontal'>");
+	  	//ç»—ï¿½é’ï¿½
+		out.print("<ul class='list' style='display:block'>");
 		for(int i=0;i<newsList.size()&&i<5;i++){
-			out.print("<dt>");
+			out.print("<li>");
 			out.print("<span class='icon'>");out.print("</span>");
-			out.print("<a class='title' href='/NewsRelease/servlet/NewsDetailServlet?newsid="+newsList.get(i).getNewsid()+"' title='"+newsList.get(i).getTitle()+"'>");		
-			out.print(newsList.get(i).getTitle());
-			out.print("</a>");
-			out.print("</dt>");
 			
-			out.print("<dd class='time text-right'>");
+			out.print("<a href='/NewsRelease/servlet/NewsDetailServlet?newsid="+newsList.get(i).getNewsid()+"' title='"+newsList.get(i).getTitle()+"'>");
+			
+			out.print(newsList.get(i).getTitle());
+		
+			out.print("</a>");
+			
+			out.print("<span class='time'>");
 			String time = newsList.get(i).getTime();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
 			try {
 				Date date = sdf.parse(time);
 				out.print(sdf.format(date));
@@ -62,26 +64,26 @@ public class ModuleTag extends SimpleTagSupport {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			out.print("</dd>");
 			
+			out.print("</span>");
 			
+			out.print("</li>");
 		}
 		
-		out.print("</dl>");
-		out.print("</div>");
-		//µÚ2ÁĞ
-		out.print("<div class='col-md-6'>");
-		out.print("<ul>");
+		out.print("</ul>");
+
+		//ç»—ï¿½é’ï¿½
+		out.print("<ul class='list' style='display:block'>");
 		for(int i=5;i<newsList.size()&&i<10;i++){
 			out.print("<li>");
 			out.print("<span class='icon'>");out.print("</span>");
-			out.print("<a class='title' href='/NewsRelease/servlet/NewsDetailServlet?newsid="+newsList.get(i).getNewsid()+"' title='"+newsList.get(i).getTitle()+"'>");
+			out.print("<a href='/NewsRelease/servlet/NewsDetailServlet?newsid="+newsList.get(i).getNewsid()+"' title='"+newsList.get(i).getTitle()+"'>");
 			
 			out.print(newsList.get(i).getTitle());
 		
 			out.print("</a>");
 			
-			out.print("<span class='time text-right'>");
+			out.print("<span class='time'>");
 			String time = newsList.get(i).getTime();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
@@ -100,7 +102,6 @@ public class ModuleTag extends SimpleTagSupport {
 		
 		
 		out.print("</ul>");
-		out.print("</div>");
 		
 		
 		out.print("</div>");

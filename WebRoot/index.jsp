@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="h" uri="http://www.hyd.com/myTag" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -20,16 +21,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    
+    <style>
+    	.list li{
+    		list-style-type:none;
+    	}
+    	.list li .icon {
+		    display: block;
+		    width: 15px;
+		    height: 15px;
+		    margin: 14px 0 14px 45px;
+		    -webkit-border-radius: 50%;
+		    -moz-border-radius: 50%;
+		    border-radius: 50%;
+		    background: #FFCC33;
+		}
+		
+		.list li a {
+		    width: 280px;
+		    white-space: nowrap;
+		    -ms-text-overflow: ellipsis;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		    height: 44px;
+		    line-height: 44px;
+		    margin: 0 40px 0 10px;
+		    color: #0099FF;
+		    font-size: 16px;
+		}
+		
+		.list li * {
+   			 float: left;
+		}
+		
+		.list li .time {
+		    display: block;
+		    height: 46px;
+		    line-height: 46px;
+		    font-size: 16px;
+		    color: #0099FF;
+		}
+    </style>
   </head>
   
   <body>
-    <div>
-    	<dl class="dl-horizontal">
-    		<dt><span class="icon"></span><span>关于数学与信息学院结算2018年财务</span></dt>
-    		<dd>2018-07-01</dd>
-    		<dt>十大打撒的撒旦阿三大苏打阿三阿斯顿十大的撒旦</dt>
-    		<dd>dadsadsadsadsadsa</dd>
-    	</dl>
-  	</div>
+    
+	<h:module type="t001"></h:module>  	
+  	<h:module type="t002"></h:module>
+  	<h:module type="t003"></h:module>
+	
   </body>
 </html>

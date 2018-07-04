@@ -29,6 +29,8 @@ public class ModuleTag extends SimpleTagSupport {
 		JspWriter out = getJspContext().getOut();
 		//鐢╰ype鏌ユ暟鎹簱,out杈撳嚭
 	  	//鏍规嵁type鏌ユ暟鎹�
+		//用type查数据库,out输出
+	  	//根据type查数据
 		//list = dao.queryPage();
 		
 		NewsDaoImpl nd = new NewsDaoImpl();
@@ -41,7 +43,7 @@ public class ModuleTag extends SimpleTagSupport {
 	  	out.print("</div>");
 	  	out.print("<div class='panel-body'>");
 	  	
-	  	//绗�鍒�
+
 		out.print("<ul class='list' style='display:block'>");
 		for(int i=0;i<newsList.size()&&i<5;i++){
 			out.print("<li>");
@@ -72,7 +74,7 @@ public class ModuleTag extends SimpleTagSupport {
 		
 		out.print("</ul>");
 
-		//绗�鍒�
+
 		out.print("<ul class='list' style='display:block'>");
 		for(int i=5;i<newsList.size()&&i<10;i++){
 			out.print("<li>");

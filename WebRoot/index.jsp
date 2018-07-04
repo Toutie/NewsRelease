@@ -16,19 +16,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
-    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+	
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
     
     <style>
+    
+   		.list li * {
+   			 float: left;
+		}
+		
     	.list li{
     		list-style-type:none;
     	}
+
     	.list li .icon {
 		    display: block;
 		    width: 15px;
@@ -53,9 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    font-size: 16px;
 		}
 		
-		.list li * {
-   			 float: left;
-		}
+		
 		
 		.list li .time {
 		    display: block;
@@ -65,13 +65,82 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    color: #0099FF;
 		}
     </style>
+    
   </head>
   
   <body>
     
-	<h:module type="t001"></h:module>  	
-  	<h:module type="t002"></h:module>
-  	<h:module type="t003"></h:module>
-	
+	<div class="container">
+		<div class="panel panel-default">
+			
+			<div class="panel-heading">21321</div>
+			
+			<div class="row">
+				
+				<div class="col-md-6">
+				<ul class="list" style="display:blcok;">
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做" target="_blank">关于做</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+				</ul>
+				</div>
+				
+				<div class="col-md-6">
+				<ul class="list" style="display:blcok;">
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+					<li>
+						<span class="icon"></span>
+						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>
+						<span class="time">2018-07-03</span>
+					</li>
+				</ul>
+				</div>
+				
+				
+			</div>
+
+		</div>
+	</div>
   </body>
 </html>

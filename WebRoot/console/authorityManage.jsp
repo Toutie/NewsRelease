@@ -60,18 +60,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      						<td>${list.name }</td>
      						<td >
      							<c:if test="${list.isNews ==1}">
-     								<button class="btn btn-danger">关闭</button>
+     								<button class="btn btn-danger" value="closeNews" onclick="authorityChange(this,'${list.username}');">关闭</button>
      							</c:if>
      							<c:if test="${list.isNews ==0}">
-     								<button class="btn btn-info">开启</button>
+     								<button class="btn btn-info" value="openNews" onclick="authorityChange(this,'${list.username}');">开启</button>
      							</c:if>
      						</td>
      						<td >
      							<c:if test="${list.isNotice ==1}">
-     								<button class="btn btn-danger">关闭</button>
+     								<button class="btn btn-danger"  value="closeNotice" onclick="authorityChange(this,'${list.username}');">关闭</button>
      							</c:if>
      							<c:if test="${list.isNotice ==0}">
-     								<button class="btn btn-info">开启</button>
+     								<button class="btn btn-info" value="openNotice" onclick="authorityChange(this,'${list.username}');">开启</button>
      							</c:if>
      						</td>		
      					</tr>				     				

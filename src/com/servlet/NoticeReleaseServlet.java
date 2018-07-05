@@ -68,11 +68,15 @@ System.out.println("It's noticeReleaseServlet");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		
+		String title = StringUtil.transfer(request.getParameter("title"));
+		String receiver = StringUtil.transfer(request.getParameter("receiver"));
+		String content = StringUtil.transfer(request.getParameter("content"));
+		
 		Notice notice = new Notice();
 		//×éÖ¯notice
-		notice.setTitle(StringUtil.transfer(request.getParameter("title")));
-		notice.setReceiver(request.getParameter("receiver"));
-		notice.setContent(StringUtil.transfer(request.getParameter("content")));
+		notice.setTitle(title);
+		notice.setReceiver(receiver);
+		notice.setContent(content);
 		notice.setSender(((User)session.getAttribute("user")).getName());		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		notice.setTime(sdf.format(new Date()));

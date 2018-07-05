@@ -54,12 +54,12 @@ public class NewsListServlet extends HttpServlet {
 		if(newsPageStr == null){
 			newsPage = newsDaoImpl.getNewsPage(type, pageSize);
 			newsPageStr = Integer.toString(newsPage);
-			servletContext.setAttribute("newsPageStr", newsPageStr);
+			servletContext.setAttribute("newsPage", newsPageStr);
 		}else{
 			newsPage = Integer.parseInt(newsPageStr); 
 		}
 		
-		if(curPageStr == null){
+		if(curPageStr == null ||curPageStr.equals("")){
 			curPage = 1;
 		}else{
 			curPage = Integer.parseInt(curPageStr);
@@ -91,6 +91,7 @@ public class NewsListServlet extends HttpServlet {
 		session.setAttribute("endPage", endPage);
 
 		request.getRequestDispatcher("/front/newsList.jsp").forward(request, response);
+		servletContext.removeAttribute("newsPage");
 	}
 
 	/**

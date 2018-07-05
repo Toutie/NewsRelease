@@ -72,7 +72,7 @@ public class AuthorityChangeServlet extends HttpServlet {
 		System.out.println("isNotice:"+isNotice);
 		
 		//—È÷§
-		if(isNews!=null&&!isNews.trim().isEmpty()&&!isNews.equals("null")){
+		if(isNews!=null&&!isNews.trim().isEmpty()&&!isNews.equals("undefined")){
 			if(userDao.updateNewsAuthority(username, isNews)){
 				out.print("true");
 			}else{
@@ -82,7 +82,7 @@ public class AuthorityChangeServlet extends HttpServlet {
 			return;
 		}
 		
-		if(isNotice!=null&&!isNotice.trim().isEmpty()&&!isNotice.equals("null")){
+		if(isNotice!=null&&!isNotice.trim().isEmpty()&&!isNotice.equals("undefined")){
 			if(userDao.updateNoticeAuthority(username, isNotice)){
 				out.print("true");
 			}else{

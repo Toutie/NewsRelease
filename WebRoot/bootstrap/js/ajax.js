@@ -180,7 +180,7 @@ function authorityChange(the,username){
 				console.log(className);
 				if(className=="btn btn-danger"){
 					the.className = "btn btn-info";
-					the.innerHtml = "开启";
+					the.innerHTML = "开启";
 					if(the.value=="closeNews"){
 						the.value="openNews";
 					}else if(the.value=="closeNotice"){
@@ -188,14 +188,14 @@ function authorityChange(the,username){
 					}
 				}else if(className=="btn btn-info"){
 					the.className = "btn btn-danger";
-					the.innerHtml = "关闭";
+					the.innerHTML = "关闭";
 					if(the.value=="openNews"){
 						the.value="closeNews";
 					}else if(the.value=="openNotice"){
 						the.value = "closeNotice";
 					}
 				}
-				
+				break;
 			case "false":
 				alert("更新失败！");
 				break;

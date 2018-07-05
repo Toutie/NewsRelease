@@ -106,7 +106,7 @@
                    		<a href="#"><i class="fa fa-sitemap"></i>附加功能<span class="fa arrow"></span></a>
                    		<ul class="nav nav-second-level">
                             <li>
-                                <a href="#">其他</a>
+                                <a href="">其他</a>
                             </li>
                         </ul>	
                    </li> 

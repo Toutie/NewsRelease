@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/myWebBody.css">
+	
 
 	<script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -65,6 +65,12 @@
 		    font-size: 16px;
 		    color: #0099FF;
 		}
+		
+		.home-page{
+			background-color:#FFFFFF;
+		}
+		
+		
     </style>
 	
 	
@@ -90,13 +96,13 @@
 	<!-- 轮播（Carousel）项目 -->
 	<div class="carousel-inner">
 		<div class="item active" align="center">
-			<img src="../image/login.png"  alt="First slide">
+			<img style="height:320px;" src="../image/login.png"  alt="First slide">
 		</div>
 		<div class="item" align="center">
-			<img src="../image/logo2.jpg" alt="Second slide">
+			<img style="height:320px;" src="../image/logo2.jpg" alt="Second slide">
 		</div>
 		<div class="item" align="center">
-			<img src="../image/myWebTop.jpg" alt="Third slide">
+			<img style="height:320px;" src="../image/myWebTop.jpg" alt="Third slide">
 		</div>
 	</div>
 	<!-- 轮播（Carousel）导航 -->

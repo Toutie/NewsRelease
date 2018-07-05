@@ -79,8 +79,12 @@ function newsRelease(){
 	var type = f.type.value;
 	var content = f.content.value;
 	
+	title = encodeURIComponent(title);
+	type = encodeURIComponent(type);
+	content = encodeURIComponent(content);
+	
 	var param = "title="+title+"&"+"type="+type+"&"+"content="+content;
-
+	
 	console.log("param:"+param);
 	
 	xhr.open("POST","servlet/NewsReleaseServlet");

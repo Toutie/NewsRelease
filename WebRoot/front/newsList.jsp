@@ -13,26 +13,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>
-    	<%session.getAttribute("type"); %>
+    	${chineseType }
     </title>
 
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
-	<style type="text/css">
-	body {
-	font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-	color:#2d3536;
-	background:#e8e0c0 url(../nivo-slider/images/background.png) repeat;
-    text-shadow:0 1px 0 #fff;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/myWebBody.css">
+	
+	<script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+	<script src="../bootstrap/js/float.js"></script>
   </head>
   
    <body class="home-page">
   	<div>
   		<div id="header"><%@ include file="/front/common/header.jsp" %></div>  		
   	</div>
-  
+  	
+  	<!-- 浮窗  -->
+	<%@ include file="./common/float.jsp" %>
+	
 	<!-- 内容 -->
 		<div id="page-wrapper" >
     		<div id="page-inner">
@@ -60,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         								<c:out value="${list.title}"/>
         							</a>
         						</td>
-        						<td><c:out value="${list.username}"/></td>
+        						<td><c:out value="${list.name}"/></td>
         						<td><c:out value="${list.time}"/></td>
         						<td><c:out value="${list.click}"/></td>
         					</tr>

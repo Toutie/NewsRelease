@@ -2,6 +2,7 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -67,16 +68,31 @@ public class NewsReleaseServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		
+		String title = StringUtil.transfer(request.getParameter("title"));
+		String content = StringUtil.transfer(request.getParameter("content"));
+		String type = StringUtil.transfer(request.getParameter("type"));
+		
+		
+		
+		//decode
+		//title = URLDecoder.decode(title,"utf-8");
+		//content = URLDecoder.decode(content,"utf-8");
+		//type = URLDecoder.decode(type,"utf-8");
+		
+		System.out.println("content:"+content);
+		
+		
 		News news = new News();
 		//组织news
-		news.setTitle(StringUtil.transfer(request.getParameter("title")));
-		news.setType(request.getParameter("type"));
-		news.setContent(StringUtil.transfer(request.getParameter("content")));
+		news.setTitle(title);
+		news.setType(type);
+		news.setContent(content);
+		news.setName(((User)session.getAttribute("user")).getName());
 		news.setUsername(((User)session.getAttribute("user")).getUsername());		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		news.setTime(sdf.format(new Date()));
 		
-		System.out.println(news.getContent());
+		
 		
 		/*
 		 * 这里需要检验数据有效性

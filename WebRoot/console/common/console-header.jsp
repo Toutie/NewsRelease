@@ -10,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>返回首页</strong></a>
+          <a class="navbar-brand" href="/NewsRelease/front/home.jsp"><i class="fa fa-gear"></i> <strong>返回首页</strong></a>
       </div>
 
       <ul class="nav navbar-top-links navbar-right">

@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="row">
 				
 				<div class="col-md-6">
-				<ul class="list" style="display:blcok;">
+				<ul class="list" style="display:block;">
 					<li>
 						<span class="icon"></span>
 						<a href="/news-3263.html" title="关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知" target="_blank">关于做好我院2018-2019学年度本科生缓交学费、住宿费工作的通知</a>

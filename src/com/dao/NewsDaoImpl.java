@@ -14,9 +14,9 @@ public class NewsDaoImpl extends BaseDAOImpl{
 	//发布新闻，插入数据
 	public boolean releaseNews(News news){
 		
-		String sql = "insert into news (type,title,content,username,time) values"+
+		String sql = "insert into news (type,title,content,username,time,name) values"+
 				"('"+news.getType()+"','"+news.getTitle()+"','"+news.getContent()+"','"
-				+news.getUsername()+"','"+news.getTime()+"');";
+				+news.getUsername()+"','"+news.getTime()+"','" + news.getName() + "');";
 		
 		System.out.println("sql:"+sql);
 		
@@ -45,6 +45,7 @@ public class NewsDaoImpl extends BaseDAOImpl{
 				news.setContent((String)rowData.get(4));
 				news.setTime((String)rowData.get(5));
 				news.setClick((String)rowData.get(6));
+				news.setName((String)rowData.get(7));
 				list.add(news);
 			}
 	        
@@ -76,7 +77,7 @@ public class NewsDaoImpl extends BaseDAOImpl{
 				news.setContent(tempList.get(4));
 				news.setTime(tempList.get(5));
 				news.setClick(tempList.get(6));
-				
+				news.setName(tempList.get(7));
 				newsList.add(news);
 			}
 			
@@ -90,30 +91,6 @@ public class NewsDaoImpl extends BaseDAOImpl{
 		// TODO Auto-generated method stub
 		String sql = "update news set click=click+1 where newsid='" + newsid + "'";
 		return super.update(sql);
-	}
-	
-	public List<News> queryNewsByType(String type) {
-		// TODO Auto-generated method stub
-		String sql = "select * from news where type='" + type + "'";
-		List resultList = super.query(sql);
-		List<News> newsList = new ArrayList<News>();
-		for(int i=0; i<resultList.size(); i++){
-			List<String> tempList = (List<String>) resultList.get(i);
-			
-			if(tempList.size()>0){
-				News news = new News();
-				news.setNewsid(tempList.get(0));
-				news.setType(tempList.get(1));
-				news.setTitle(tempList.get(2));
-				news.setUsername(tempList.get(3));
-				news.setContent(tempList.get(4));
-				news.setTime(tempList.get(5));
-				news.setClick(tempList.get(6));
-				
-				newsList.add(news);
-			}
-		}
-		return newsList;
 	}
 	
 	//获取该类型新闻的总页数

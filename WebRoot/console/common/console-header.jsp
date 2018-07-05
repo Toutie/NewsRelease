@@ -10,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.jsp"><i class="fa fa-gear"></i> <strong>返回首页</strong></a>
+          <a class="navbar-brand" href="/NewsRelease/front/home.jsp"><i class="fa fa-gear"></i> <strong>返回首页</strong></a>
       </div>
 
       <ul class="nav navbar-top-links navbar-right">
@@ -32,7 +32,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                      <a class="text-center" href="#">
+                      <a class="text-center" href="/NewsRelease/servlet/MyNoticeServlet">
                           <strong>Read All Messages</strong>
                           <i class="fa fa-angle-right"></i>
                       </a>
@@ -52,7 +52,10 @@
                    <li><a href="#"><i class="fa fa-gear fa-fw"></i>设置</a>
                    </li>
                    <li class="divider"></li>
-                   <li><a href="/NewsRelease/servlet/LogoutServlet"><i class="fa fa-sign-out fa-fw"></i>登出</a>
+                   <li>
+                   	<a href="/NewsRelease/servlet/LogoutServlet">
+                   		<i class="fa fa-sign-out fa-fw"></i>登出
+                  	</a>
                    </li>
                </ul>
                <!-- /.dropdown-user -->
@@ -79,6 +82,9 @@
                            	<li>
                                 <a href="console/noticeRelease.jsp">发布通知</a>
                             </li>
+                            <li>
+                            	<a href="console/authorityManage.jsp">权限管理</a>
+                            </li>
                         </ul>
                    </li>
                    
@@ -100,7 +106,7 @@
                    		<a href="#"><i class="fa fa-sitemap"></i>附加功能<span class="fa arrow"></span></a>
                    		<ul class="nav nav-second-level">
                             <li>
-                                <a href="#">其他</a>
+                                <a href="">其他</a>
                             </li>
                         </ul>	
                    </li> 

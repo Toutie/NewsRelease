@@ -13,21 +13,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>
-    	<%session.getAttribute("type"); %>
+    	${chineseType }
     </title>
 
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/myWebBody.css">
 	
+	<script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+	<script src="../bootstrap/js/float.js"></script>
   </head>
   
    <body class="home-page">
   	<div>
   		<div id="header"><%@ include file="/front/common/header.jsp" %></div>  		
   	</div>
-  
+  	
+  	<!-- 浮窗  -->
+	<%@ include file="./common/float.jsp" %>
+	
 	<!-- 内容 -->
-		<div id="page-wrapper">
+		<div id="page-wrapper" >
     		<div id="page-inner">
     			<div>
     				<ol class="breadcrumb">
@@ -37,8 +43,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</div>
     			<hr/>
      			<!-- 我的通知 -->
-        		<div id="myNotice" class="text-center">
-        			<table class="table table-hover table-bordered">
+        		<div id="newsList" class="text-center container" >
+        			<table class="table table-hover table-bordered" style="background-color:white">
         				<!-- 表头  -->
         				<tr>
         					<th>标题</th>
@@ -53,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         								<c:out value="${list.title}"/>
         							</a>
         						</td>
-        						<td><c:out value="${list.username}"/></td>
+        						<td><c:out value="${list.name}"/></td>
         						<td><c:out value="${list.time}"/></td>
         						<td><c:out value="${list.click}"/></td>
         					</tr>

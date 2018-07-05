@@ -79,8 +79,12 @@ function newsRelease(){
 	var type = f.type.value;
 	var content = f.content.value;
 	
+	title = encodeURIComponent(title);
+	type = encodeURIComponent(type);
+	content = encodeURIComponent(content);
+	
 	var param = "title="+title+"&"+"type="+type+"&"+"content="+content;
-
+	
 	console.log("param:"+param);
 	
 	xhr.open("POST","servlet/NewsReleaseServlet");
@@ -111,6 +115,10 @@ function noticeRelease(){
 	var receiver = f.receiver.value;
 	var content = f.content.value;
 	
+	title = encodeURIComponent(title);
+	receiver = encodeURIComponent(receiver);
+	content = encodeURIComponent(content);
+	
 	var param = "title="+title+"&"+"receiver="+receiver+"&"+"content="+content;
 
 	console.log("param:"+param);
@@ -132,6 +140,70 @@ function noticeRelease(){
 			}
 		}
 	}
+}
+
+//权限改变
+function authorityChange(the,username){
+	console.log(the.value);
+	console.log(username);
+	
+	var isNews;
+	var isNotice ;
+	switch(the.value){
+	case "closeNews":
+		isNews = 0;
+		break;
+	case "openNews":
+		isNews = 1;
+		break;
+	case "closeNotice":
+		isNotice = 0;
+		break;
+	case "openNotice":
+		isNotice = 1;
+		break;
+	}
+	
+	var param = "username="+username+"&&isNews="+isNews+"&&isNotice="+isNotice;
+	
+	var xhr = getXHR();
+	xhr.open("POST", "servlet/AuthorityChangeServlet");
+	xhr.setRequestHeader("CONTENT-TYPE","application/x-www-form-urlencoded");
+	xhr.send(param);
+	
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var message = xhr.responseText;
+			switch(message){
+			case "true":
+				var className = the.className;
+				console.log(className);
+				if(className=="btn btn-danger"){
+					the.className = "btn btn-info";
+					the.innerHTML = "开启";
+					if(the.value=="closeNews"){
+						the.value="openNews";
+					}else if(the.value=="closeNotice"){
+						the.value = "openNotice";
+					}
+				}else if(className=="btn btn-info"){
+					the.className = "btn btn-danger";
+					the.innerHTML = "关闭";
+					if(the.value=="openNews"){
+						the.value="closeNews";
+					}else if(the.value=="openNotice"){
+						the.value = "closeNotice";
+					}
+				}
+				break;
+			case "false":
+				alert("更新失败！");
+				break;
+			}
+			
+		}
+	}
+	
 }
 
 

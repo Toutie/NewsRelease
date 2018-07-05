@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+  <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
 <!DOCTYPE HTML>
 <html>
@@ -6,37 +6,34 @@
     <title>Header</title>
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+	
+	<style type="text/css">
+		#menu ul li{
+			width:250px;
+			text-align:center;
+			font-size:20px;
+		}
+	</style>
   </head>
   
   <body>
-    <div class="" style="background-color:#3300ff">
-    	<div class="logo" id="logo">
-    		<image src="/NewsRelease/image/logo2.jpg"/>
+    <div>
+    	<div class="logo" id="logo" align="center">
+    		<image style="height:160px;width:100%;" src="/NewsRelease/image/myWebTop.jpg"/>
     	</div>
-     </div>	
-    <div class="container" id="menu">
-    	<ul class="nav navbar-nav" >
-    		<li><a href="/NewsRelease/front/home.jsp">首页</a></li>
+    </div>	
+
+    <div class="nav-bar" role="navigation" id="menu" style="border:outset;">
+    	<div class="container-fluid">
+ 			<ul class="nav navbar-nav" >
+    		<li align="center" ><a href="/NewsRelease/front/home.jsp">首        页</a></li>
+    		<li><a href="/NewsRelease/NewsListServlet?type=t001">学 院 动 态</a></li>
+    		<li><a href="/NewsRelease/NewsListServlet?type=t002">学 术 新 闻</a></li>
+    		<li><a href="/NewsRelease/NewsListServlet?type=t003">学 风 建 设</a></li>
+    		<li><a href="/NewsRelease/console/main.jsp">个 人 中 心</a></li>
     	</ul>
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">学院概况</a></li>
-    	</ul>
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">师资队伍</a></li>
-    	</ul>
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">学术科研</a></li>
-    	</ul>
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">党建</a></li>
-    	</ul>
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">学生天地</a></li>
-    	</ul>
-    	<ul class="nav navbar-nav">
-    		<li><a href="#">就业信息</a></li>
-    	</ul>
+    	</div>
     </div>
-   
+
   </body>
 </html>

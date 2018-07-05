@@ -9,7 +9,25 @@ public class User {
 	private String birthday;
 	private String identity;
 	private String grade;
+	private String isNews;
+	private String isNotice;
 	
+	public String getIsNews() {
+		return isNews;
+	}
+
+	public void setIsNews(String isNews) {
+		this.isNews = isNews;
+	}
+
+	public String getIsNotice() {
+		return isNotice;
+	}
+
+	public void setIsNotice(String isNotice) {
+		this.isNotice = isNotice;
+	}
+
 	public User(){}
 	
 	public String getUsername() {

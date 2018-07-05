@@ -18,6 +18,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/myWebBody.css">
+	
+	<script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+	<script src="../bootstrap/js/float.js"></script>
   </head>
   
     <body class="home-page">
@@ -25,12 +29,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<div id="header"><%@ include file="/front/common/header.jsp" %></div>  		
   	</div>
   	
+  	<!-- 浮窗  -->
+	<%@ include file="./common/float.jsp" %>
+	
 	<div id="body">
 		<div id="newsTitle" class="text-center">
 			<h1>${news.title }</h1>
 		</div>
 		<div id="newsAttr" class="text-center">
-			新闻类型：${news.type }&nbsp;&nbsp;编辑作者：${news.username }&nbsp;&nbsp;发布时间：${news.time }&nbsp;&nbsp;点击量：${news.click }
+			新闻类型：${chineseType }&nbsp;&nbsp;编辑作者：${news.name }&nbsp;&nbsp;发布时间：${news.time }&nbsp;&nbsp;点击量：${news.click }
 		</div>
 		<hr />
 		<div id="newsContent" class="container">

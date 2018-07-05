@@ -47,16 +47,20 @@
                 		<input type="text" class="form-control" id="title" name="title" placeholder="请输入新闻标题" required>
             		</div>
             		
+            		
+            		
             		<!-- 新闻类型 -->
             		<div>
             			<label for="type">类型</label>
             			
             			<select class="form-control" id="type" name="type" required>
             				<option value="t001">学院动态</option>
-            				<option value="t002">本科生通知</option>
-            				<option value="t003">研究生通知</option>
+            				<option value="t002">学术新闻</option>
+            				<option value="t003">学风建设</option>
             			</select>          			
             		</div>
+            		
+            	
             		
 	      			 <hr/>
 	      			 

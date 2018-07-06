@@ -16,8 +16,10 @@ public class DataBaseUtil {
 	//加载配置文件
 	static{
 		try {
-			String path = Thread.currentThread().getContextClassLoader().getResource("").toString();
-			path = path + "\\DataBase.cfg.xml";
+			String path = GetWebProjectRealPathTool.getRootPath();
+			path = path + "/DataBase.cfg.xml";
+			
+			System.out.println("path");
 			List<DataBaseCfg> dbCfgs = ReadCfgByDom.getDbCfg(path);
 			DataBaseCfg dbcfg = new DataBaseCfg();
 			//得到第一份配置文件信息

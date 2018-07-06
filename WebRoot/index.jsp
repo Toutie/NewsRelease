@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     	<script>
-    		location.href = "NewsRelease/front/home.jsp";
+    		location.href = "front/home.jsp";
     	</script>
   </body>
 </html>

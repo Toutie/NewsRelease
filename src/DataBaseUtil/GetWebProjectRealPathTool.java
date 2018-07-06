@@ -9,7 +9,7 @@ public class GetWebProjectRealPathTool {
 	 */
 	
 	//获取项目的根路径
-	public static String classPath = GetWebProjectRealPathTool.class.getClassLoader().getResource("/").getPath();
+	public static String classPath = Thread.currentThread().getContextClassLoader().getResource("").toString();
 	//对项目的根路径进行解析，拿到项目路径
 	
 	public static String getRootPath() {

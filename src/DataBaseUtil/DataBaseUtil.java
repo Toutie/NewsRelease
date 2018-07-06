@@ -1,5 +1,6 @@
 package DataBaseUtil;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,8 +17,20 @@ public class DataBaseUtil {
 	//加载配置文件
 	static{
 		try {
-			String path = GetWebProjectRealPathTool.getRootPath();
-			path = path + "/DataBase.cfg.xml";
+			String path =Thread.currentThread().getContextClassLoader().getResource("").toString();
+			path = path + "\\DataBase.cfg.xml";
+			
+			if("\\".equals(File.separator)){
+				System.out.println("windows");
+				
+				path = path.replace("/", "\\");
+			}
+			//linux下
+			if("/".equals(File.separator)){
+				System.out.println("linux");
+				
+				path = path.replace("\\", "/");
+			}
 			
 			System.out.println("path");
 			List<DataBaseCfg> dbCfgs = ReadCfgByDom.getDbCfg(path);

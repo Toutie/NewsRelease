@@ -5,7 +5,7 @@
 	<!-- 驱动程序名 -->
 	<driver>com.mysql.jdbc.Driver</driver>
 	<!-- 数据库连接信息 -->
-	<url>jdbc:mysql://111.230.105.13:3306/NewsRelease</url>
+	<url>jdbc:mysql://localhost:3306/NewsRelease</url>
 	<!-- 数据库账号 -->
 	<username>root</username>
 	<!-- 数据库账号的密码 -->

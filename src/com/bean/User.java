@@ -11,7 +11,25 @@ public class User {
 	private String grade;
 	private String isNews;
 	private String isNotice;
+	private String ip;	//µÇÂ½ip
+	private String time;	//µÇÂ½Ê±¼ä
 	
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	public String getIsNews() {
 		return isNews;
 	}

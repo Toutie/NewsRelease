@@ -85,6 +85,9 @@
                             <li>
                             	<a href="console/authorityManage.jsp">权限管理</a>
                             </li>
+                            <li>
+                            	<a href="servlet/NewsManageServlet">新闻管理</a>
+                            </li>
                         </ul>
                    </li>
                    
@@ -106,7 +109,7 @@
                    		<a href="#"><i class="fa fa-sitemap"></i>附加功能<span class="fa arrow"></span></a>
                    		<ul class="nav nav-second-level">
                             <li>
-                                <a href="">其他</a>
+                                <a href="">场地申请</a>
                             </li>
                         </ul>	
                    </li> 

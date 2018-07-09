@@ -51,7 +51,7 @@ public class NoticeReleaseFilter implements Filter {
 			response.setContentType("text/html;charset=utf-8");
 			response.setCharacterEncoding("utf-8");
 			response.getWriter().print(
-					"<script>alert('抱歉，你没有该权限！');</script>"
+					"<script>alert('鏉冮檺涓嶈冻');</script>"
 					+"<script>location.href='/NewsRelease/console/main.jsp'</script>"
 					);
 		}

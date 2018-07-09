@@ -67,6 +67,20 @@
     <servlet-name>SearchUserServlet</servlet-name>
     <servlet-class>com.servlet.SearchUserServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>NewsManageServlet</description>
+    <display-name>NewsManageServlet</display-name>
+    <servlet-name>NewsManageServlet</servlet-name>
+    <servlet-class>com.servlet.NewsManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>NewsDeleteServlet</description>
+    <display-name>NewsDeleteServlet</display-name>
+    <servlet-name>NewsDeleteServlet</servlet-name>
+    <servlet-class>com.servlet.NewsDeleteServlet</servlet-class>
+  </servlet>
+
+
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/servlet/LoginServlet</url-pattern>
@@ -111,6 +125,14 @@
     <servlet-name>SearchUserServlet</servlet-name>
     <url-pattern>/servlet/SearchUserServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsManageServlet</servlet-name>
+    <url-pattern>/servlet/NewsManageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsDeleteServlet</servlet-name>
+    <url-pattern>/servlet/NewsDeleteServlet</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -131,15 +153,18 @@
     <filter-name>NoticeReleaseFilter</filter-name>
     <filter-class>com.filter.NoticeReleaseFilter</filter-class>
   </filter>
-    <filter>
+  <filter>
     <filter-name>AdminFilter</filter-name>
     <filter-class>com.filter.AdminFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>AdminFilter</filter-name>
+    <url-pattern>/console/newsManage.jsp</url-pattern>
     <url-pattern>/console/authorityManage.jsp</url-pattern>
     <url-pattern>/servlet/SearchUserServlet</url-pattern>
     <url-pattern>/servlet/AuthorityChangeServlet</url-pattern>
+    <url-pattern>/servlet/NewsDeleteServlet</url-pattern>
+    <url-pattern>/servlet/NewsManageServlet</url-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>

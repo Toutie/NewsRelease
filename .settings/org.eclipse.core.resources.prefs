@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebRoot/ueditor/jsp/config.json=UTF-8
+encoding//src/com/filter/AdminFilter.java=UTF-8
+encoding//src/com/filter/NewsReleaseFilter.java=UTF-8
+encoding//src/com/filter/NoticeReleaseFilter.java=UTF-8
 encoding//src/com/mytag/ModuleTag.java=UTF-8

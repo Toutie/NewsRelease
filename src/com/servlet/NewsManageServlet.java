@@ -2,27 +2,26 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bean.User;
-import com.dao.UserDaoImpl;
-import com.verify.LoginVerify;
+import com.bean.News;
+import com.dao.NewsDaoImpl;
 
-public class LoginServlet extends HttpServlet {
-	
-	
-	
+import StringUtil.StringUtil;
+
+public class NewsManageServlet extends HttpServlet {
+
 	/**
 		 * Constructor of the object.
 		 */
-	public LoginServlet() {
+	public NewsManageServlet() {
 		super();
 	}
 
@@ -61,60 +60,56 @@ public class LoginServlet extends HttpServlet {
 		 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("It's LoginServlet!");
-		
-		
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
+		
 		HttpSession session = request.getSession();
 		
-		//获取参数
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String verification = request.getParameter("verification");
-		System.out.println(username+"/"+password+"/"+verification);
+		String type = request.getParameter("type");
+		String curPageStr = request.getParameter("curPage");	//得到当前页数的字符串
+		NewsDaoImpl newsDaoImpl = new NewsDaoImpl();
+
+		int curPage = 1;	//当前页
+		int pageSize = 10;	//页大小
+		int allNewsPage = 0;	//所有新闻的总页数
+		int beginPage = 0;	//起始页
+		int endPage = 0;	//结束页
 		
-		String correctCode = (String)session.getAttribute("verification");
 		
-		//验证验证码
-		if(!LoginVerify.codeVerify(verification,correctCode)){
-			//返回提示，验证码错误，ajax
-			out.print("login002");	//验证码错误
+		allNewsPage = newsDaoImpl.getAllNewsPage(pageSize);
+		String allNewsPageStr = Integer.toString(allNewsPage);
+		session.setAttribute("allNewsPage", allNewsPageStr);
+		
+		if(curPageStr == null ||curPageStr.equals("")){
+			curPage = 1;
 		}else{
-			
-			//验证用户名和密码格式
-			if(!LoginVerify.formVerify(username,password)){
-				//返回提示，格式错误，建议用ajax
-				out.print("login003");
-			}
-			
-			//实例化
-			User user = new User();
-			UserDaoImpl userDao = new UserDaoImpl();
-			
-			//验证账号密码是否错误
-			user = userDao.isValid(username, password);
-			if(user==null){
-				//账号或密码错误
-				out.print("login001");
-			}else{
-				//登陆成功,更新信息
-				String ip = request.getRemoteAddr();
-				user.setIp(ip);
-				
-				Date date = new Date();
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-				String time = sdf.format(date);
-				
-				user.setTime(time);
-				
-				userDao.updateLogin(username, ip, user.getTime());
-				
-				session.setAttribute("user", user);
-				session.setMaxInactiveInterval(1800);
-				out.print("login000");
-			}
+			curPage = Integer.parseInt(curPageStr);
 		}
+		
+		if(curPage < 1){
+			curPage = 1;
+		}else if(curPage > allNewsPage){
+			curPage = allNewsPage;
+		}
+		
+		if(beginPage <= 5){
+			beginPage = 1;
+		}else {
+			beginPage = curPage - 5;
+		}
+		endPage = beginPage + 10;
+		
+		if(endPage>allNewsPage){
+			endPage = allNewsPage;
+		}
+		
+		List<News> allNews = newsDaoImpl.queryAllNews(curPage, pageSize);
+		session.setAttribute("allNews", allNews);
+		session.setAttribute("curPage", curPage);
+		session.setAttribute("beginPage", beginPage);
+		session.setAttribute("endPage", endPage);
+
+		request.getRequestDispatcher("/console/newsManage.jsp").forward(request, response);
 	}
 
 	/**

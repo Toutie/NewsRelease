@@ -11,10 +11,7 @@
 	<meta name="keywords" content="新闻发布网站">
 	<meta name="description" content="新闻发布网站">
 
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	
-
 	<script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<script src="../bootstrap/js/float.js"></script>
@@ -22,6 +19,10 @@
 
 	
 	<style>
+	
+		#info-panel{
+			box-shadow: 0 0 10px #708090;
+		}
     
    		.list li * {
    			 float: left;

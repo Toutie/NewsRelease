@@ -17,7 +17,7 @@ public class DataBaseUtil {
 	//¼ÓÔØÅäÖÃÎÄ¼ş
 	static{
 		try {
-			String path =Thread.currentThread().getContextClassLoader().getResource("").toString();
+			String path = Thread.currentThread().getContextClassLoader().getResource("").toString();
 			path = path + "\\DataBase.cfg.xml";
 			
 			if("\\".equals(File.separator)){

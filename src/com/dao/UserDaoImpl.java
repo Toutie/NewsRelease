@@ -1,5 +1,6 @@
 package com.dao;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import com.bean.User;
 import DataBaseUtil.BaseDAOImpl;
@@ -75,6 +76,15 @@ public class UserDaoImpl extends BaseDAOImpl{
 		
 		return list;
 	}
+	
+	public boolean updateLogin(String username,String ip,String time){
+		String sql = "update user set ip='"+ip+"',time='"+time+"' "+
+				"where username='"+username+"';";
+		System.out.println("sql:"+sql);
+		
+		return super.update(sql);
+	}
+	
 	
 	public boolean updateNewsAuthority(String username,String isNews){
 		String sql = "update user set isNews='"+isNews+"' where username='"+

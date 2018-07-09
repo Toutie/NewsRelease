@@ -37,11 +37,11 @@ public class ModuleTag extends SimpleTagSupport {
 		List<News> newsList = nd.queryNewsByType(type,1,10);
 		
 		out.print("<div class='container'>");
-	  	out.print("<div class='panel panel-default'>");
+	  	out.print("<div id='info-panel' class='panel panel-default'>");
 	  	out.print("<div class='panel-heading'>");
 	  	out.print("<a href='/NewsRelease/servlet/NewsListServlet?type=" + type + "'>"+ StringUtil.typeToChineseStr(type) +"</a>");	//type
 	  	out.print("</div>");
-	  	out.print("<div class='row'>");
+	  	out.print("<div  class='row'>");
 	  	out.print("<div class='col-md-6'>");
 	  	
 		out.print("<ul class='list' style='display:block;'>");
